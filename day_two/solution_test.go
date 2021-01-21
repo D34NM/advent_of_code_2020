@@ -21,7 +21,7 @@ func Test02(t *testing.T) {
 
 	result := solution(input)
 
-	if result != 0 {
+	if result != 1 {
 		t.Fail()
 	}
 }

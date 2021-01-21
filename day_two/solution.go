@@ -11,8 +11,8 @@ func solution(input []string) int {
 
 	for _, line := range input {
 		found := 0
-		first, fEnd := parseNumber(line, 0, byte('-'))
-		second, sEnd := parseNumber(line, fEnd+1, byte(' '))
+		min, fEnd := parseNumber(line, 0, byte('-'))
+		max, sEnd := parseNumber(line, fEnd+1, byte(' '))
 		letter := line[sEnd+1]
 
 		for i := sEnd + 4; i < len(line); i++ {
@@ -21,7 +21,7 @@ func solution(input []string) int {
 			}
 		}
 
-		if found >= first && found <= second {
+		if found >= min && found <= max {
 			valid++
 		}
 	}

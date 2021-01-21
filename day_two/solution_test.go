@@ -17,6 +17,16 @@ func Test01(t *testing.T) {
 }
 
 func Test02(t *testing.T) {
+	input := []string{"1-13 a: abcde"}
+
+	result := solution(input)
+
+	if result != 0 {
+		t.Fail()
+	}
+}
+
+func Test03(t *testing.T) {
 	f, err := os.Open("input.txt")
 
 	if err != nil {
@@ -35,7 +45,7 @@ func Test02(t *testing.T) {
 
 	result := solution(input)
 
-	if result != 0 {
+	if result != 439 {
 		t.Fail()
 	}
 }

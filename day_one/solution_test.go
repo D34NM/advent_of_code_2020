@@ -10,7 +10,7 @@ import (
 func Test01(t *testing.T) {
 	input := []int{1721, 979, 366, 299, 675, 1456}
 
-	result := Solution(input)
+	result := solution(input)
 
 	if result != 514579 {
 		t.Fail()
@@ -18,7 +18,6 @@ func Test01(t *testing.T) {
 }
 
 func Test02(t *testing.T) {
-	// todo read a file and store into a slice
 	f, err := os.Open("input.txt")
 
 	if err != nil {
@@ -36,9 +35,9 @@ func Test02(t *testing.T) {
 		input = append(input, i)
 	}
 
-	result := Solution(input)
+	result := solution(input)
 
-	if result != 0 {
+	if result != 898299 {
 		t.Fail()
 	}
 }

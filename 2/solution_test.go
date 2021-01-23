@@ -69,7 +69,7 @@ func Test04(t *testing.T) {
 
 	result := solutionPartTwo(input)
 
-	if result != 430 {
+	if result != 584 {
 		t.Fail()
 	}
 }

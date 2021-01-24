@@ -21,7 +21,7 @@ func Test01(t *testing.T) {
 		".#..#...#.#",
 	}
 
-	result := solution(input, 3, 1)
+	result := solutionOne(input)
 
 	if result != 7 {
 		t.Fail()
@@ -45,7 +45,7 @@ func Test02(t *testing.T) {
 		input = append(input, line)
 	}
 
-	result := solution(input, 3, 1)
+	result := solutionOne(input)
 
 	if result != 193 {
 		t.Fail()
@@ -67,11 +67,11 @@ func Test03(t *testing.T) {
 		".#..#...#.#",
 	}
 
-	first := solution(input, 1, 1)
-	second := solution(input, 3, 1)
-	third := solution(input, 5, 1)
-	forth := solution(input, 7, 1)
-	fifth := solution(input, 1, 2)
+	first := solutionTwo(input, 1, 1)
+	second := solutionTwo(input, 3, 1)
+	third := solutionTwo(input, 5, 1)
+	forth := solutionTwo(input, 7, 1)
+	fifth := solutionTwo(input, 1, 2)
 
 	result := first * second * third * forth * fifth
 
@@ -97,11 +97,11 @@ func Test04(t *testing.T) {
 		input = append(input, line)
 	}
 
-	first := solution(input, 1, 1)
-	second := solution(input, 3, 1)
-	third := solution(input, 5, 1)
-	forth := solution(input, 7, 1)
-	fifth := solution(input, 1, 2)
+	first := solutionTwo(input, 1, 1)
+	second := solutionTwo(input, 3, 1)
+	third := solutionTwo(input, 5, 1)
+	forth := solutionTwo(input, 7, 1)
+	fifth := solutionTwo(input, 1, 2)
 
 	result := first * second * third * forth * fifth
 

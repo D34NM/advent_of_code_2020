@@ -6,8 +6,6 @@ import (
 	"strings"
 )
 
-func main() {}
-
 func validBirthYear(byr string) bool {
 	year, err := strconv.Atoi(byr)
 
@@ -112,7 +110,7 @@ func validCountryID(_ string) bool {
 	return false
 }
 
-func solution(input []string) int {
+func solutionTwo(input []string) int {
 	valid := 0
 	empty := ""
 	required := map[string]func(string) bool{

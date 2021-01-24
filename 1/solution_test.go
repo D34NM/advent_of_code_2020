@@ -10,7 +10,7 @@ import (
 func Test01(t *testing.T) {
 	input := []int{1721, 979, 366, 299, 675, 1456}
 
-	result := solutionPartOne(input)
+	result := solutionOne(input)
 
 	if result != 514579 {
 		t.Fail()
@@ -35,7 +35,7 @@ func Test02(t *testing.T) {
 		input = append(input, i)
 	}
 
-	result := solutionPartOne(input)
+	result := solutionOne(input)
 
 	if result != 898299 {
 		t.Fail()
@@ -60,7 +60,7 @@ func Test03(t *testing.T) {
 		input = append(input, i)
 	}
 
-	result := solutionPartTwo(input)
+	result := solutionTwo(input)
 
 	if result != 143933922 {
 		t.Fail()

@@ -4,26 +4,7 @@ import (
 	"sort"
 )
 
-func main() {}
-
-func solutionPartOne(input []int) int {
-	target := 2020
-
-	m := make(map[int]bool)
-	for _, num := range input {
-		tmp := target - num
-
-		if m[tmp] {
-			return num * tmp
-		}
-
-		m[num] = true
-	}
-
-	return 0
-}
-
-func solutionPartTwo(input []int) int {
+func solutionTwo(input []int) int {
 	sort.Ints(input)
 	length := len(input)
 	for i := 0; i < length-2; i++ {

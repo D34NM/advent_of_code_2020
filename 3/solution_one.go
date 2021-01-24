@@ -1,15 +1,13 @@
 package main
 
-func main() {}
-
-func solution(input []string, right, down int) int {
+func solutionOne(input []string) int {
 	trees := 0
 	tree := byte('#')
 
 	length := len(input[0])
-	index := right
+	index := 3
 
-	for i := down; i < len(input); i = i + down {
+	for i := 1; i < len(input); i++ {
 		row := input[i]
 		tmp := index % length
 		current := row[tmp]
@@ -17,7 +15,7 @@ func solution(input []string, right, down int) int {
 			trees++
 		}
 
-		index = index + right
+		index = index + 3
 	}
 
 	return trees

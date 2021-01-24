@@ -24,7 +24,7 @@ func Test01(t *testing.T) {
 		"",
 	}
 
-	result := solution(input)
+	result := solutionTwo(input)
 
 	if result != 2 {
 		t.Fail()
@@ -48,7 +48,7 @@ func Test02(t *testing.T) {
 		"",
 	}
 
-	result := solution(input)
+	result := solutionTwo(input)
 
 	if result != 4 {
 		t.Fail()
@@ -73,7 +73,7 @@ func Test03(t *testing.T) {
 		"",
 	}
 
-	result := solution(input)
+	result := solutionTwo(input)
 
 	if result != 0 {
 		t.Fail()
@@ -98,7 +98,32 @@ func Test04(t *testing.T) {
 	}
 
 	input = append(input, "")
-	result := solution(input)
+	result := solutionOne(input)
+
+	if result != 228 {
+		t.Fail()
+	}
+}
+
+func Test05(t *testing.T) {
+	f, err := os.Open("input.txt")
+
+	if err != nil {
+		t.Fail()
+	}
+
+	defer f.Close()
+
+	scanner := bufio.NewScanner(f)
+
+	input := make([]string, 0)
+	for scanner.Scan() {
+		line := scanner.Text()
+		input = append(input, line)
+	}
+
+	input = append(input, "")
+	result := solutionTwo(input)
 
 	if result != 0 {
 		t.Fail()

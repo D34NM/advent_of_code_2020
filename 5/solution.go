@@ -1,9 +1,11 @@
 package main
 
+import "sort"
+
 func main() {}
 
 func solution(input []string) int {
-	highestID := 0
+	seatID := 0
 	front := byte('F')
 	back := byte('B')
 	left := byte('L')
@@ -11,6 +13,8 @@ func solution(input []string) int {
 
 	row := 0
 	column := 0
+
+	seats := []int{}
 
 	for _, line := range input {
 		lowR, highR := 0, 127
@@ -36,14 +40,21 @@ func solution(input []string) int {
 		}
 
 		tmp := column + (row * 8)
-
-		if tmp > highestID {
-			highestID = tmp
-		}
+		seats = append(seats, tmp)
 
 		column = 0
 		row = 0
 	}
 
-	return highestID
+	sort.Ints(seats)
+
+	for i := len(seats) - 1; i > 0; i-- {
+		first := seats[i]
+		second := seats[i-1]
+		if first-second == 2 {
+			seatID = seats[i] - 1
+		}
+	}
+
+	return seatID
 }

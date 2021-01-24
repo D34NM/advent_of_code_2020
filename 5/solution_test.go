@@ -51,7 +51,7 @@ func Test03(t *testing.T) {
 
 	result := solution(input)
 
-	if result != 906 {
+	if result != 519 {
 		t.Fail()
 	}
 }

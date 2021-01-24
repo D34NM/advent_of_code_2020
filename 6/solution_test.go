@@ -11,11 +11,12 @@ func Test01(t *testing.T) {
 		"abcx",
 		"abcy",
 		"abcz",
+		"",
 	}
 
 	result := solutionOne(input)
 
-	if result != 0 {
+	if result != 6 {
 		t.Fail()
 	}
 }
@@ -37,11 +38,12 @@ func Test02(t *testing.T) {
 		"a",
 		"",
 		"b",
+		"",
 	}
 
 	result := solutionOne(input)
 
-	if result != 0 {
+	if result != 11 {
 		t.Fail()
 	}
 }
@@ -62,6 +64,8 @@ func Test04(t *testing.T) {
 		line := scanner.Text()
 		input = append(input, line)
 	}
+
+	input = append(input, "")
 
 	result := solutionOne(input)
 

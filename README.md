@@ -10,6 +10,7 @@ The solution for the [Advent of Code 2020](https://adventofcode.com/). Language 
 | Day 4 | [Link](/4/solution_one.go) | [Link](/4/solution_two.go) |
 | Day 5 | [Link](/5/solution_one.go) | [Link](/5/solution_two.go) |
 | Day 6 | [Link](/6/solution_one.go) | [Link](/6/solution_two.go) |
+| Day 7 | [Link](/7/solution_one.go) | [Link](/7/solution_two.go) |
 
 ## Remarks
 

@@ -21,7 +21,7 @@ func Test01(t *testing.T) {
 
 	result := solutionOne(input)
 
-	if result != 0 {
+	if result != 4 {
 		t.Fail()
 	}
 }
@@ -43,7 +43,7 @@ func Test02(t *testing.T) {
 		input = append(input, line)
 	}
 
-	result := solutionTwo(input)
+	result := solutionOne(input)
 
 	if result != 0 {
 		t.Fail()

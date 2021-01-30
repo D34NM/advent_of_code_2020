@@ -11,7 +11,12 @@ The solution for the [Advent of Code 2020](https://adventofcode.com/). Language 
 | 5     | [Link](/5/solution_one.go) | [Link](/5/solution_two.go) |
 | 6     | [Link](/6/solution_one.go) | [Link](/6/solution_two.go) |
 | 7     | [Link](/7/solution_one.go) | [Link](/7/solution_two.go) |
+| 8     | [Link](/8/solution_one.go) | [Link](/8/solution_two.go) |
 
 ## Remarks
 
 [Day 4](/4/solution_two.go) is work in progress.
+[Day 7](/7/solution_one.go) is work in progress.
+[Day 7](/7/solution_two.go) is work in progress.
+[Day 8](/8/solution_one.go) is work in progress.
+[Day 8](/8/solution_two.go) is work in progress.

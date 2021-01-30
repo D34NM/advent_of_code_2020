@@ -19,7 +19,7 @@ func Test01(t *testing.T) {
 		"dotted black bags contain no other bags.",
 	}
 
-	result := solutionOne(input)
+	result := solutionOne(&input)
 
 	if result != 4 {
 		t.Fail()
@@ -27,9 +27,9 @@ func Test01(t *testing.T) {
 }
 
 func Test02(t *testing.T) {
-	input := reader.ReadInputFile("input.txt")
+	input := reader.ReadAsStrings("input.txt")
 
-	result := solutionOne(*input)
+	result := solutionOne(input)
 
 	if result != 0 {
 		t.Fail()

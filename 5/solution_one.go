@@ -1,6 +1,6 @@
 package main
 
-func solutionOne(input []string) int {
+func solutionOne(input *[]string) int {
 	highestSeatID := 0
 	front := byte('F')
 	back := byte('B')
@@ -10,7 +10,7 @@ func solutionOne(input []string) int {
 	row := 0
 	column := 0
 
-	for _, line := range input {
+	for _, line := range *input {
 		lowR, highR := 0, 127
 		lowC, highC := 0, 7
 		for i := 0; i < len(line); i++ {

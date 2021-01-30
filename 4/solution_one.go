@@ -2,13 +2,13 @@ package main
 
 import "strings"
 
-func solutionOne(input []string) int {
+func solutionOne(input *[]string) int {
 	valid := 0
 	empty := ""
 	reserved := map[string]bool{"byr": true, "iyr": true, "eyr": true, "hgt": true, "hcl": true, "ecl": true, "pid": true}
 
 	current := 0
-	for _, row := range input {
+	for _, row := range *input {
 		if row == empty {
 			if current >= len(reserved) {
 				valid++

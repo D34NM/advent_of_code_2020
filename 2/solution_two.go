@@ -5,10 +5,10 @@ import (
 	"strings"
 )
 
-func solutionTwo(input []string) int {
+func solutionTwo(input *[]string) int {
 	valid := 0
 
-	for _, line := range input {
+	for _, line := range *input {
 		fields := strings.Fields(line)
 		split := strings.Index(fields[0], "-")
 

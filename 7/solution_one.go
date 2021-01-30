@@ -52,11 +52,11 @@ func traverse(key string, mapping *map[string]*[]string) int {
 	return 1
 }
 
-func solutionOne(input []string) int {
+func solutionOne(input *[]string) int {
 	count := 0
 	mapping := map[string]*[]string{}
 
-	for _, line := range input {
+	for _, line := range *input {
 		parts := strings.Split(line, "contain")
 
 		outerBagColor := getOuterBagColor(parts[0])

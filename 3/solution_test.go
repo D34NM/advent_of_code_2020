@@ -1,9 +1,9 @@
 package main
 
 import (
-	"bufio"
-	"os"
 	"testing"
+
+	"github.com/DeanMilojevic/advent_of_code_2020/internal/reader"
 )
 
 func Test01(t *testing.T) {
@@ -21,7 +21,7 @@ func Test01(t *testing.T) {
 		".#..#...#.#",
 	}
 
-	result := solutionOne(input)
+	result := solutionOne(&input)
 
 	if result != 7 {
 		t.Fail()
@@ -29,21 +29,7 @@ func Test01(t *testing.T) {
 }
 
 func Test02(t *testing.T) {
-	f, err := os.Open("input.txt")
-
-	if err != nil {
-		t.Fail()
-	}
-
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-
-	input := make([]string, 0)
-	for scanner.Scan() {
-		line := scanner.Text()
-		input = append(input, line)
-	}
+	input := reader.ReadAsStrings("input.txt")
 
 	result := solutionOne(input)
 
@@ -67,11 +53,11 @@ func Test03(t *testing.T) {
 		".#..#...#.#",
 	}
 
-	first := solutionTwo(input, 1, 1)
-	second := solutionTwo(input, 3, 1)
-	third := solutionTwo(input, 5, 1)
-	forth := solutionTwo(input, 7, 1)
-	fifth := solutionTwo(input, 1, 2)
+	first := solutionTwo(&input, 1, 1)
+	second := solutionTwo(&input, 3, 1)
+	third := solutionTwo(&input, 5, 1)
+	forth := solutionTwo(&input, 7, 1)
+	fifth := solutionTwo(&input, 1, 2)
 
 	result := first * second * third * forth * fifth
 
@@ -81,21 +67,7 @@ func Test03(t *testing.T) {
 }
 
 func Test04(t *testing.T) {
-	f, err := os.Open("input.txt")
-
-	if err != nil {
-		t.Fail()
-	}
-
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-
-	input := make([]string, 0)
-	for scanner.Scan() {
-		line := scanner.Text()
-		input = append(input, line)
-	}
+	input := reader.ReadAsStrings("input.txt")
 
 	first := solutionTwo(input, 1, 1)
 	second := solutionTwo(input, 3, 1)

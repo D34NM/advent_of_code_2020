@@ -1,9 +1,9 @@
 package main
 
 import (
-	"bufio"
-	"os"
 	"testing"
+
+	"github.com/DeanMilojevic/advent_of_code_2020/internal/reader"
 )
 
 func Test01(t *testing.T) {
@@ -11,7 +11,7 @@ func Test01(t *testing.T) {
 		"FBFBBFFRLR",
 	}
 
-	result := solutionOne(input)
+	result := solutionOne(&input)
 
 	if result != 357 {
 		t.Fail()
@@ -25,7 +25,7 @@ func Test02One(t *testing.T) {
 		"BBFFBBFRLL",
 	}
 
-	result := solutionOne(input)
+	result := solutionOne(&input)
 
 	if result != 820 {
 		t.Fail()
@@ -33,21 +33,7 @@ func Test02One(t *testing.T) {
 }
 
 func Test03(t *testing.T) {
-	f, err := os.Open("input.txt")
-
-	if err != nil {
-		t.Fail()
-	}
-
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-
-	input := make([]string, 0)
-	for scanner.Scan() {
-		line := scanner.Text()
-		input = append(input, line)
-	}
+	input := reader.ReadAsStrings("input.txt")
 
 	result := solutionOne(input)
 
@@ -57,21 +43,7 @@ func Test03(t *testing.T) {
 }
 
 func Test04(t *testing.T) {
-	f, err := os.Open("input.txt")
-
-	if err != nil {
-		t.Fail()
-	}
-
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-
-	input := make([]string, 0)
-	for scanner.Scan() {
-		line := scanner.Text()
-		input = append(input, line)
-	}
+	input := reader.ReadAsStrings("input.txt")
 
 	result := solutionTwo(input)
 

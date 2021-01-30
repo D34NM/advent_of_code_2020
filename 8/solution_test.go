@@ -1,6 +1,10 @@
 package main
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/DeanMilojevic/advent_of_code_2020/internal/reader"
+)
 
 func Test01(t *testing.T) {
 	input := []string{
@@ -15,7 +19,7 @@ func Test01(t *testing.T) {
 		"acc +6",
 	}
 
-	result := solutionOne(input)
+	result := solutionOne(&input)
 
 	if result != 5 {
 		t.Fail()
@@ -23,5 +27,11 @@ func Test01(t *testing.T) {
 }
 
 func Test02(t *testing.T) {
+	input := reader.ReadAsStrings("input.txt")
 
+	result := solutionTwo(input)
+
+	if result != 0 {
+		t.Fail()
+	}
 }

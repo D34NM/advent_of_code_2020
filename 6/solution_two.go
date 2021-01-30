@@ -1,13 +1,13 @@
 package main
 
-func solutionTwo(input []string) int {
+func solutionTwo(input *[]string) int {
 	empty := ""
 	total := 0
 
 	groupSize := 0
 	questions := map[byte]int{}
 	answers := 0
-	for _, line := range input {
+	for _, line := range *input {
 		if line == empty {
 			for _, val := range questions {
 				if val == groupSize {

@@ -110,7 +110,7 @@ func validCountryID(_ string) bool {
 	return false
 }
 
-func solutionTwo(input []string) int {
+func solutionTwo(input *[]string) int {
 	valid := 0
 	empty := ""
 	required := map[string]func(string) bool{
@@ -125,7 +125,7 @@ func solutionTwo(input []string) int {
 	}
 
 	current := 0
-	for _, row := range input {
+	for _, row := range *input {
 		if row == empty {
 			if current >= len(required)-1 {
 				valid++

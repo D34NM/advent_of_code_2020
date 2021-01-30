@@ -1,10 +1,10 @@
 package main
 
-func solutionOne(input []int) int {
+func solutionOne(input *[]int) int {
 	target := 2020
 
 	m := make(map[int]bool)
-	for _, num := range input {
+	for _, num := range *input {
 		tmp := target - num
 
 		if m[tmp] {

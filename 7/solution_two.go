@@ -1,5 +1,6 @@
 package main
 
-func solutionTwo(input []string) int {
+func solutionTwo(input *[]string) int {
+
 	return 0
 }

@@ -2,7 +2,7 @@ package main
 
 import "sort"
 
-func solutionTwo(input []string) int {
+func solutionTwo(input *[]string) int {
 	seatID := 0
 	front := byte('F')
 	back := byte('B')
@@ -14,7 +14,7 @@ func solutionTwo(input []string) int {
 
 	seats := []int{}
 
-	for _, line := range input {
+	for _, line := range *input {
 		lowR, highR := 0, 127
 		lowC, highC := 0, 7
 		for i := 0; i < len(line); i++ {

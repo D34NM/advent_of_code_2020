@@ -1,16 +1,15 @@
 package main
 
 import (
-	"bufio"
-	"os"
-	"strconv"
 	"testing"
+
+	"github.com/DeanMilojevic/advent_of_code_2020/internal/reader"
 )
 
 func Test01(t *testing.T) {
 	input := []int{1721, 979, 366, 299, 675, 1456}
 
-	result := solutionOne(input)
+	result := solutionOne(&input)
 
 	if result != 514579 {
 		t.Fail()
@@ -18,22 +17,7 @@ func Test01(t *testing.T) {
 }
 
 func Test02(t *testing.T) {
-	f, err := os.Open("input.txt")
-
-	if err != nil {
-		t.Fail()
-	}
-
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-
-	input := make([]int, 0)
-	for scanner.Scan() {
-		line := scanner.Text()
-		i, _ := strconv.Atoi(line)
-		input = append(input, i)
-	}
+	input := reader.ReadAsInts("input.txt")
 
 	result := solutionOne(input)
 
@@ -43,23 +27,7 @@ func Test02(t *testing.T) {
 }
 
 func Test03(t *testing.T) {
-	f, err := os.Open("input.txt")
-
-	if err != nil {
-		t.Fail()
-	}
-
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-
-	input := make([]int, 0)
-	for scanner.Scan() {
-		line := scanner.Text()
-		i, _ := strconv.Atoi(line)
-		input = append(input, i)
-	}
-
+	input := reader.ReadAsInts("input.txt")
 	result := solutionTwo(input)
 
 	if result != 143933922 {

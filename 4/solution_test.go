@@ -1,9 +1,9 @@
 package main
 
 import (
-	"bufio"
-	"os"
 	"testing"
+
+	"github.com/DeanMilojevic/advent_of_code_2020/internal/reader"
 )
 
 func Test01(t *testing.T) {
@@ -24,7 +24,7 @@ func Test01(t *testing.T) {
 		"",
 	}
 
-	result := solutionTwo(input)
+	result := solutionTwo(&input)
 
 	if result != 2 {
 		t.Fail()
@@ -48,7 +48,7 @@ func Test02(t *testing.T) {
 		"",
 	}
 
-	result := solutionTwo(input)
+	result := solutionTwo(&input)
 
 	if result != 4 {
 		t.Fail()
@@ -73,7 +73,7 @@ func Test03(t *testing.T) {
 		"",
 	}
 
-	result := solutionTwo(input)
+	result := solutionTwo(&input)
 
 	if result != 0 {
 		t.Fail()
@@ -81,23 +81,9 @@ func Test03(t *testing.T) {
 }
 
 func Test04(t *testing.T) {
-	f, err := os.Open("input.txt")
+	input := reader.ReadAsStrings("input.txt")
 
-	if err != nil {
-		t.Fail()
-	}
-
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-
-	input := make([]string, 0)
-	for scanner.Scan() {
-		line := scanner.Text()
-		input = append(input, line)
-	}
-
-	input = append(input, "")
+	*input = append(*input, "")
 	result := solutionOne(input)
 
 	if result != 228 {
@@ -106,26 +92,12 @@ func Test04(t *testing.T) {
 }
 
 func Test05(t *testing.T) {
-	f, err := os.Open("input.txt")
+	input := reader.ReadAsStrings("input.txt")
 
-	if err != nil {
-		t.Fail()
-	}
-
-	defer f.Close()
-
-	scanner := bufio.NewScanner(f)
-
-	input := make([]string, 0)
-	for scanner.Scan() {
-		line := scanner.Text()
-		input = append(input, line)
-	}
-
-	input = append(input, "")
+	*input = append(*input, "")
 	result := solutionTwo(input)
 
-	if result != 0 {
+	if result != 176 {
 		t.Fail()
 	}
 }

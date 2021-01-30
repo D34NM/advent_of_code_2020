@@ -35,3 +35,33 @@ func Test02(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func Test03(t *testing.T) {
+	input := []string{
+		"nop +0",
+		"acc +1",
+		"jmp +4",
+		"acc +3",
+		"jmp -3",
+		"acc -99",
+		"acc +1",
+		"jmp -4",
+		"acc +6",
+	}
+
+	result := solutionTwo(&input)
+
+	if result != 8 {
+		t.Fail()
+	}
+}
+
+func Test04(t *testing.T) {
+	input := reader.ReadAsStrings("input.txt")
+
+	result := solutionTwo(input)
+
+	if result != 0 {
+		t.Fail()
+	}
+}

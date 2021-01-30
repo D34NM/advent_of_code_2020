@@ -18,5 +18,4 @@ The solution for the [Advent of Code 2020](https://adventofcode.com/). Language 
 [Day 4](/4/solution_two.go) is work in progress.
 [Day 7](/7/solution_one.go) is work in progress.
 [Day 7](/7/solution_two.go) is work in progress.
-[Day 8](/8/solution_one.go) is work in progress.
 [Day 8](/8/solution_two.go) is work in progress.

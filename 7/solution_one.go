@@ -10,7 +10,7 @@ func getOuterBagColor(input string) string {
 	return input[:index]
 }
 
-func getInnerBagColors(input string) []string {
+func getInnerBagColors(input string) *[]string {
 	parts := strings.Split(input, ",")
 
 	result := make([]string, 0)
@@ -24,33 +24,37 @@ func getInnerBagColors(input string) []string {
 		result = append(result, bag)
 	}
 
-	return result
+	return &result
 }
 
-func traverse(key string, mapping map[string][]string) int {
-	bags, ok := mapping[key]
+var seen = make(map[string]int, 0)
 
-	if ok {
+func traverse(key string, mapping *map[string]*[]string) int {
+	if _, exists := seen[key]; exists {
+		return 0
+	}
+
+	if bags, exists := (*mapping)[key]; exists {
 		count := 0
-		for _, bag := range bags {
-			innerBags, _ := mapping[bag]
-			if len(innerBags) > 0 {
+		for _, bag := range *bags {
+			if _, exists := (*mapping)[bag]; exists {
 				count = count + traverse(bag, mapping)
 			} else {
-				count = count + 1
+				count++
 			}
 		}
 
+		seen[key] = count
 		return count
 	}
 
+	seen[key] = 1
 	return 1
 }
 
 func solutionOne(input []string) int {
 	count := 0
-
-	mapping := map[string][]string{}
+	mapping := map[string]*[]string{}
 
 	for _, line := range input {
 		parts := strings.Split(line, "contain")
@@ -58,21 +62,20 @@ func solutionOne(input []string) int {
 		outerBagColor := getOuterBagColor(parts[0])
 		innerBagColors := getInnerBagColors(parts[1])
 
-		for _, inner := range innerBagColors {
-			val, ok := mapping[inner]
-			if ok {
-				val = append(val, outerBagColor)
-				mapping[inner] = val
+		for _, innerBag := range *innerBagColors {
+			if val, exists := mapping[innerBag]; exists {
+				*val = append(*val, outerBagColor)
+				mapping[innerBag] = val
 			} else {
-				mapping[inner] = []string{outerBagColor}
+				mapping[innerBag] = &[]string{outerBagColor}
 			}
 		}
 	}
 
 	bags, _ := mapping["shiny gold"]
 
-	for _, bag := range bags {
-		count = count + traverse(bag, mapping)
+	for _, bag := range *bags {
+		count = count + traverse(bag, &mapping)
 	}
 
 	return count
